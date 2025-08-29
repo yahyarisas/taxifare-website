@@ -110,7 +110,8 @@ if st.button("Predict Fare", type="primary"):
     try:
             with st.spinner('Getting prediction from API...'):
                 # Make the API call
-                response = requests.get(url, params=params, timeout=30)
+                response = requests.get(url, params=params)
+                st.write(response.status_code)
 
             # 4. Let's retrieve the prediction from the **JSON** returned by the API...
 
